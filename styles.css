@@ -48,7 +48,6 @@ th, td {
   padding: 0.5rem;
   border-bottom: 1px solid #cce0ff;
   text-align: center;
-  word-wrap: break-word;
   vertical-align: middle;
 }
 
@@ -65,10 +64,10 @@ th {
 th:first-child,
 td:first-child {
   text-align: left;
-  width: auto;
-  min-width: 300px;
+  width: 50%;
   white-space: normal;
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 th:not(:first-child),
@@ -97,5 +96,6 @@ tr:hover {
   th:first-child,
   td:first-child {
     width: auto;
+    min-width: 200px;
   }
 }
