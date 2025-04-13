@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const tableContainer = document.getElementById('table-container');
   const searchInput = document.getElementById('search');
 
-  fetch('wii_pal_titles_full.md')
+  fetch('index.md')
     .then(response => response.text())
     .then(text => {
       tableContainer.innerHTML = marked.parse(text);
