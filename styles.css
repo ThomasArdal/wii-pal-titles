@@ -40,7 +40,7 @@ table {
   box-shadow: 0 0 10px rgba(0, 115, 230, 0.1);
   background-color: #ffffffcc;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   table-layout: fixed;
 }
 
@@ -51,16 +51,19 @@ th, td {
   word-wrap: break-word;
 }
 
-th:first-child,
-td:first-child {
-  text-align: left;
-  width: 40%;
-}
-
 th {
   background-color: #0073e6;
   color: white;
   font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+  width: 40%;
 }
 
 tr:nth-child(even) {
