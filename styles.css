@@ -40,8 +40,8 @@ table {
   box-shadow: 0 0 10px rgba(0, 115, 230, 0.1);
   background-color: #ffffffcc;
   border-radius: 12px;
-  overflow: visible;
-  table-layout: fixed;
+  overflow: hidden;
+  table-layout: auto; /* <-- ikke fixed! */
 }
 
 th, td {
@@ -49,6 +49,7 @@ th, td {
   border-bottom: 1px solid #cce0ff;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 th {
@@ -58,21 +59,14 @@ th {
   position: sticky;
   top: 0;
   z-index: 2;
-  white-space: nowrap;
 }
 
-th:first-child,
-td:first-child {
+td:first-child,
+th:first-child {
   text-align: left;
-  width: 50%;
-  white-space: normal;
+  white-space: normal; /* <-- lad tekst bryde naturligt */
   word-break: break-word;
-  overflow-wrap: anywhere;
-}
-
-th:not(:first-child),
-td:not(:first-child) {
-  width: 4rem;
+  min-width: 250px;
 }
 
 tr:nth-child(even) {
@@ -93,9 +87,8 @@ tr:hover {
     width: 100%;
   }
 
-  th:first-child,
-  td:first-child {
-    width: auto;
+  td:first-child,
+  th:first-child {
     min-width: 200px;
   }
 }
